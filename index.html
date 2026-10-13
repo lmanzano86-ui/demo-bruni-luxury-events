@@ -63,6 +63,37 @@ footer{text-align:center;padding:26px 18px;border-top:1px solid rgba(184,134,11,
 footer .dor{color:var(--oro-osc);letter-spacing:3px;font-weight:bold}
 footer a{color:var(--oro-osc);text-decoration:none}
 .divider{width:60px;height:2px;background:var(--oro);margin:14px auto;opacity:.8}
+/* Formulario de cotización */
+.form-card{background:rgba(255,253,246,.88);border:1px solid rgba(184,134,11,.6);border-radius:14px;padding:22px 18px;margin:0 0 20px;box-shadow:0 6px 18px rgba(138,109,31,.14);text-align:left}
+.f-grupo{margin-bottom:20px}
+.f-titulo{display:block;font-weight:bold;color:var(--oro-osc);letter-spacing:1px;margin-bottom:10px;font-size:.95rem}
+.f-row{display:flex;gap:10px;flex-wrap:wrap}
+.f-campo{flex:1 1 44%;min-width:130px;margin-bottom:10px}
+.f-campo>span{display:block;font-size:.78rem;color:var(--bronze-suave);margin-bottom:4px;letter-spacing:.5px;font-family:'Segoe UI',Arial,sans-serif}
+.f-campo input[type=text],.f-campo input[type=tel],.f-campo input[type=email],.f-campo input[type=date],.f-campo textarea{width:100%;padding:10px 12px;border:1px solid rgba(184,134,11,.55);border-radius:10px;background:#fffdf6;color:var(--bronze);font-family:'Segoe UI',Arial,sans-serif;font-size:.92rem}
+.f-campo textarea{min-height:88px;resize:vertical}
+.opciones{display:flex;flex-wrap:wrap;gap:8px}
+.opc{position:relative}
+.opc input{position:absolute;opacity:0;pointer-events:none}
+.opc label{display:inline-block;padding:9px 15px;border:1px solid rgba(184,134,11,.55);border-radius:24px;background:rgba(255,253,246,.7);color:var(--bronze);font-size:.85rem;cursor:pointer;font-family:'Segoe UI',Arial,sans-serif;transition:background .2s,color .2s}
+.opc input:checked+label{background:linear-gradient(135deg,#d4af37,#a67c1a);color:#2e2006;font-weight:bold;border-color:#a67c1a;box-shadow:0 3px 8px rgba(138,109,31,.3)}
+.inv-wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+input[type=range].slider{flex:1 1 140px;accent-color:#b8860b}
+.inv-num{width:74px;padding:8px;border:1px solid rgba(184,134,11,.55);border-radius:10px;background:#fffdf6;color:var(--bronze);font-size:.95rem;text-align:center;font-family:'Segoe UI',Arial,sans-serif}
+.inv-lbl{font-size:.85rem;color:var(--bronze-suave);font-family:'Segoe UI',Arial,sans-serif}
+.inv-lbl strong{color:var(--oro-osc);font-size:1rem}
+.f-nota{font-size:.78rem;color:var(--bronze-suave);font-style:italic;margin-top:10px;font-family:'Segoe UI',Arial,sans-serif}
+.f-error{display:none;background:#fdecea;border:1px solid #c0392b;color:#922b21;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.85rem;font-family:'Segoe UI',Arial,sans-serif}
+.f-submit{text-align:center;margin-top:6px}
+.resumen{background:rgba(255,253,246,.94);border:2px solid var(--oro);border-radius:14px;padding:24px 20px;margin-top:4px;box-shadow:0 8px 22px rgba(138,109,31,.2)}
+.resumen h3{color:var(--oro-osc);text-align:center;letter-spacing:2px;margin-bottom:4px;font-weight:normal;font-size:1.25rem}
+.r-fila{display:flex;gap:10px;padding:8px 0;border-bottom:1px dotted rgba(184,134,11,.4);font-size:.9rem}
+.r-fila dt{flex:0 0 40%;color:var(--bronze-suave);font-family:'Segoe UI',Arial,sans-serif;font-size:.8rem}
+.r-fila dd{flex:1;color:var(--bronze);font-weight:bold;margin:0}
+.r-aviso{text-align:center;font-style:italic;color:var(--oro-osc);font-size:.88rem;margin:14px 0 4px}
+.r-abierto{text-align:center;font-size:.8rem;color:var(--bronze-suave);font-family:'Segoe UI',Arial,sans-serif;margin-bottom:10px}
+.r-acciones{text-align:center;margin-top:12px}
+.r-acciones .btn{margin:6px 4px}
 </style>
 </head>
 <body>
@@ -127,10 +158,84 @@ footer a{color:var(--oro-osc);text-decoration:none}
   <p style="color:var(--bronze);font-size:.95rem" data-es="Trabajamos eventos íntimos y grandes celebraciones con el mismo compromiso: que tu día sea verdaderamente inolvidable." data-en="We handle intimate gatherings and grand celebrations with the same commitment: making your day truly unforgettable.">Trabajamos eventos íntimos y grandes celebraciones con el mismo compromiso: que tu día sea verdaderamente inolvidable.</p>
 </section>
 
-<section class="contacto nos">
+<section class="contacto nos" id="cotiza">
   <h2 data-es="Cotiza tu evento" data-en="Quote your event">Cotiza tu evento</h2>
   <div class="divider"></div>
-  <p class="sub" data-es="Cuéntanos tu fecha y el tipo de evento — te respondemos con una cotización personalizada" data-en="Tell us your date and event type — we'll reply with a personalized quote">Cuéntanos tu fecha y el tipo de evento — te respondemos con una cotización personalizada</p>
+  <p class="sub" data-es="Completa el formulario — tu solicitud llegará a Bruni y ella te enviará tu cotización personalizada" data-en="Fill out the form — your request will reach Bruni and she will send you your personalized quote">Completa el formulario — tu solicitud llegará a Bruni y ella te enviará tu cotización personalizada</p>
+
+  <form id="formCotiza" class="form-card" novalidate>
+    <div class="f-error" id="fError" role="alert"></div>
+
+    <div class="f-grupo">
+      <span class="f-titulo" data-es="1 · Tus datos" data-en="1 · Your details">1 · Tus datos</span>
+      <div class="f-row">
+        <div class="f-campo"><span data-es="Nombre *" data-en="Name *">Nombre *</span><input type="text" id="fNombre" autocomplete="name"></div>
+        <div class="f-campo"><span data-es="Teléfono *" data-en="Phone *">Teléfono *</span><input type="tel" id="fTel" autocomplete="tel"></div>
+        <div class="f-campo"><span data-es="Email *" data-en="Email *">Email *</span><input type="email" id="fEmail" autocomplete="email"></div>
+        <div class="f-campo"><span data-es="Fecha del evento *" data-en="Event date *">Fecha del evento *</span><input type="date" id="fFecha"></div>
+      </div>
+    </div>
+
+    <div class="f-grupo">
+      <span class="f-titulo" data-es="2 · Tipo de evento" data-en="2 · Event type">2 · Tipo de evento</span>
+      <div class="opciones">
+        <span class="opc"><input type="radio" name="tipoEv" id="ev1" value="boda"><label for="ev1"><span data-es="💍 Boda" data-en="💍 Wedding">💍 Boda</span></label></span>
+        <span class="opc"><input type="radio" name="tipoEv" id="ev2" value="quince"><label for="ev2"><span data-es="👑 Quinceañera" data-en="👑 Quinceañera">👑 Quinceañera</span></label></span>
+        <span class="opc"><input type="radio" name="tipoEv" id="ev3" value="corp"><label for="ev3"><span data-es="💼 Corporativo" data-en="💼 Corporate">💼 Corporativo</span></label></span>
+        <span class="opc"><input type="radio" name="tipoEv" id="ev4" value="cumple"><label for="ev4"><span data-es="🎂 Cumpleaños" data-en="🎂 Birthday">🎂 Cumpleaños</span></label></span>
+        <span class="opc"><input type="radio" name="tipoEv" id="ev5" value="baby"><label for="ev5"><span data-es="🍼 Baby shower" data-en="🍼 Baby shower">🍼 Baby shower</span></label></span>
+        <span class="opc"><input type="radio" name="tipoEv" id="ev6" value="grad"><label for="ev6"><span data-es="🎓 Graduación" data-en="🎓 Graduation">🎓 Graduación</span></label></span>
+        <span class="opc"><input type="radio" name="tipoEv" id="ev7" value="otro"><label for="ev7"><span data-es="✨ Otro" data-en="✨ Other">✨ Otro</span></label></span>
+      </div>
+    </div>
+
+    <div class="f-grupo">
+      <span class="f-titulo" data-es="3 · Tipo de comida" data-en="3 · Food style">3 · Tipo de comida</span>
+      <div class="opciones">
+        <span class="opc"><input type="radio" name="tipoComida" id="co1" value="buffet"><label for="co1"><span data-es="🍽️ Buffet" data-en="🍽️ Buffet">🍽️ Buffet</span></label></span>
+        <span class="opc"><input type="radio" name="tipoComida" id="co2" value="plated"><label for="co2"><span data-es="🍷 Cena servida" data-en="🍷 Plated dinner">🍷 Cena servida</span></label></span>
+        <span class="opc"><input type="radio" name="tipoComida" id="co3" value="finger"><label for="co3"><span data-es="🥂 Finger food / cocktail" data-en="🥂 Finger food / cocktail">🥂 Finger food / cocktail</span></label></span>
+        <span class="opc"><input type="radio" name="tipoComida" id="co4" value="estaciones"><label for="co4"><span data-es="🧀 Estaciones de comida" data-en="🧀 Food stations">🧀 Estaciones de comida</span></label></span>
+        <span class="opc"><input type="radio" name="tipoComida" id="co5" value="postres"><label for="co5"><span data-es="🍰 Solo postres" data-en="🍰 Desserts only">🍰 Solo postres</span></label></span>
+      </div>
+    </div>
+
+    <div class="f-grupo">
+      <span class="f-titulo" data-es="4 · Cantidad de invitados" data-en="4 · Number of guests">4 · Cantidad de invitados</span>
+      <div class="inv-wrap">
+        <input type="range" class="slider" id="fInvRange" min="10" max="500" step="5" value="100" aria-label="Invitados">
+        <input type="number" class="inv-num" id="fInvNum" min="10" max="500" step="5" value="100" aria-label="Número de invitados">
+        <span class="inv-lbl"><strong id="fInvVal">100</strong> <span data-es="invitados" data-en="guests">invitados</span></span>
+      </div>
+    </div>
+
+    <div class="f-grupo">
+      <span class="f-titulo" data-es="5 · Servicios que te interesan (puedes combinar)" data-en="5 · Services you're interested in (combine as you like)">5 · Servicios que te interesan (puedes combinar)</span>
+      <div class="opciones">
+        <span class="opc"><input type="checkbox" id="sv1" value="catering"><label for="sv1"><span data-es="Catering" data-en="Catering">Catering</span></label></span>
+        <span class="opc"><input type="checkbox" id="sv2" value="decor"><label for="sv2"><span data-es="Decoración / Styling" data-en="Décor / Styling">Decoración / Styling</span></label></span>
+        <span class="opc"><input type="checkbox" id="sv3" value="mesas"><label for="sv3"><span data-es="Montaje de mesas" data-en="Table setup">Montaje de mesas</span></label></span>
+        <span class="opc"><input type="checkbox" id="sv4" value="flores"><label for="sv4"><span data-es="Arreglos florales" data-en="Floral arrangements">Arreglos florales</span></label></span>
+        <span class="opc"><input type="checkbox" id="sv5" value="luz"><label for="sv5"><span data-es="Iluminación ambiental" data-en="Ambient lighting">Iluminación ambiental</span></label></span>
+        <span class="opc"><input type="checkbox" id="sv6" value="coord"><label for="sv6"><span data-es="Coordinación del día" data-en="Day-of coordination">Coordinación del día</span></label></span>
+      </div>
+      <p class="f-nota" data-es="Son categorías de servicios. El menú detallado con precios se agregará cuando la dueña lo provea." data-en="These are service categories. The detailed menu with prices will be added when the owner provides it.">Son categorías de servicios. El menú detallado con precios se agregará cuando la dueña lo provea.</p>
+    </div>
+
+    <div class="f-grupo">
+      <span class="f-titulo" data-es="6 · Notas especiales" data-en="6 · Special notes">6 · Notas especiales</span>
+      <div class="f-campo" style="margin-bottom:0"><textarea id="fNotas" rows="3"></textarea></div>
+    </div>
+
+    <div class="f-submit">
+      <button type="submit" class="btn sans" data-es="Enviar solicitud" data-en="Send request">Enviar solicitud</button>
+    </div>
+  </form>
+
+  <div class="resumen" id="resumen" style="display:none"></div>
+
+  <div class="divider" style="margin-top:30px"></div>
+  <p class="sub" data-es="¿Prefieres escribirnos directo?" data-en="Prefer to write us directly?">¿Prefieres escribirnos directo?</p>
   <a class="btn sans" href="https://www.instagram.com/bruniluxuryevents/" target="_blank" data-es="Escríbenos en Instagram" data-en="Message us on Instagram">Escríbenos en Instagram</a>
   <a class="btn borde sans" href="tel:+18132306957" data-es="📞 (813) 230-6957" data-en="📞 (813) 230-6957">📞 (813) 230-6957</a>
   <a class="btn borde sans" href="mailto:Bruniluxevents@gmail.com" data-es="✉️ Bruniluxevents@gmail.com" data-en="✉️ Bruniluxevents@gmail.com">✉️ Bruniluxevents@gmail.com</a>
@@ -156,6 +261,126 @@ function setLang(l){
   try{localStorage.setItem('bruni-lang',l)}catch(e){}
 }
 try{var s=localStorage.getItem('bruni-lang');if(s)setLang(s)}catch(e){}
+
+/* ---- Formulario de cotización ---- */
+var FSTR = {
+es:{
+  resumenTitulo:'Resumen de tu solicitud',
+  nombre:'Nombre', tel:'Teléfono', email:'Email', fecha:'Fecha del evento',
+  tipoEv:'Tipo de evento', tipoComida:'Tipo de comida', invitados:'Invitados',
+  servicios:'Servicios de interés', notas:'Notas especiales',
+  noSel:'No seleccionado', ninguno:'Ninguno seleccionado',
+  aviso:'Tu solicitud llegará a Bruni y ella te enviará tu cotización personalizada.',
+  enviarMail:'✉️ Enviar por correo', enviarWa:'💬 Enviar por WhatsApp', enviarIg:'📸 Enviar por Instagram',
+  eligeVia:'Elige cómo enviarnos tu solicitud:',
+  errIntro:'Por favor completa los siguientes campos: ',
+  asunto:'Solicitud de cotización',
+  cuerpoTitulo:'SOLICITUD DE COTIZACIÓN — BRUNI LUXURY EVENTS',
+  valores:{boda:'Boda',quince:'Quinceañera',corp:'Corporativo',cumple:'Cumpleaños',baby:'Baby shower',grad:'Graduación',otro:'Otro',
+    buffet:'Buffet',plated:'Cena servida (plated)',finger:'Finger food / cocktail',estaciones:'Estaciones de comida',postres:'Solo postres',
+    catering:'Catering',decor:'Decoración / Styling',mesas:'Montaje de mesas',flores:'Arreglos florales',luz:'Iluminación ambiental',coord:'Coordinación del día'}
+},
+en:{
+  resumenTitulo:'Summary of your request',
+  nombre:'Name', tel:'Phone', email:'Email', fecha:'Event date',
+  tipoEv:'Event type', tipoComida:'Food style', invitados:'Guests',
+  servicios:'Services of interest', notas:'Special notes',
+  noSel:'Not selected', ninguno:'None selected',
+  aviso:'Your request will reach Bruni and she will send you your personalized quote.',
+  enviarMail:'✉️ Send by email', enviarWa:'💬 Send via WhatsApp', enviarIg:'📸 Send via Instagram',
+  eligeVia:'Choose how to send us your request:',
+  errIntro:'Please complete the following fields: ',
+  asunto:'Quote request',
+  cuerpoTitulo:'QUOTE REQUEST — BRUNI LUXURY EVENTS',
+  valores:{boda:'Wedding',quince:'Quinceañera',corp:'Corporate',cumple:'Birthday',baby:'Baby shower',grad:'Graduation',otro:'Other',
+    buffet:'Buffet',plated:'Plated dinner',finger:'Finger food / cocktail',estaciones:'Food stations',postres:'Desserts only',
+    catering:'Catering',decor:'Décor / Styling',mesas:'Table setup',flores:'Floral arrangements',luz:'Ambient lighting',coord:'Day-of coordination'}
+}};
+var lastData = null;
+function fLang(){ return document.documentElement.lang==='en' ? 'en' : 'es'; }
+function fVal(name){ var el=document.querySelector('input[name="'+name+'"]:checked'); return el?el.value:''; }
+function syncInv(v,src){
+  v=Math.max(10,Math.min(500,parseInt(v,10)||10));
+  if(src!=='range')document.getElementById('fInvRange').value=v;
+  if(src!=='num')document.getElementById('fInvNum').value=v;
+  document.getElementById('fInvVal').textContent=v;
+  return v;
+}
+document.getElementById('fInvRange').addEventListener('input',function(){syncInv(this.value,'range')});
+document.getElementById('fInvNum').addEventListener('input',function(){syncInv(this.value,'num')});
+try{document.getElementById('fFecha').min=new Date().toISOString().slice(0,10)}catch(e){}
+
+function buildData(){
+  var F=FSTR[fLang()], d={};
+  d.nombre=document.getElementById('fNombre').value.trim();
+  d.tel=document.getElementById('fTel').value.trim();
+  d.email=document.getElementById('fEmail').value.trim();
+  d.fecha=document.getElementById('fFecha').value;
+  d.tipoEv=fVal('tipoEv'); d.tipoComida=fVal('tipoComida');
+  d.inv=syncInv(document.getElementById('fInvNum').value,'num');
+  d.servicios=[]; document.querySelectorAll('#formCotiza input[type=checkbox]:checked').forEach(function(c){d.servicios.push(c.value)});
+  d.notas=document.getElementById('fNotas').value.trim();
+  d.F=F;
+  return d;
+}
+function resumenTexto(d){
+  var F=d.F, L=[];
+  L.push(F.cuerpoTitulo,'');
+  L.push(F.nombre+': '+d.nombre, F.tel+': '+d.tel, F.email+': '+d.email, F.fecha+': '+d.fecha);
+  L.push(F.tipoEv+': '+(d.tipoEv?F.valores[d.tipoEv]:F.noSel));
+  L.push(F.tipoComida+': '+(d.tipoComida?F.valores[d.tipoComida]:F.noSel));
+  L.push(F.invitados+': '+d.inv);
+  L.push(F.servicios+': '+(d.servicios.length?d.servicios.map(function(s){return F.valores[s]}).join(', '):F.ninguno));
+  L.push(F.notas+': '+(d.notas||'—'));
+  L.push('', F.aviso);
+  return L.join('\n');
+}
+function fila(dt,dd){ return '<div class="r-fila"><dt>'+dt+'</dt><dd>'+dd+'</dd></div>'; }
+function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function renderResumen(d){
+  var F=d.F, box=document.getElementById('resumen');
+  var tipoEvLbl=d.tipoEv?F.valores[d.tipoEv]:F.noSel;
+  var asunto=F.asunto+' — '+d.nombre+' — '+tipoEvLbl;
+  var cuerpo=resumenTexto(d);
+  var mailto='mailto:Bruniluxevents@gmail.com?subject='+encodeURIComponent(asunto)+'&body='+encodeURIComponent(cuerpo);
+  var wa='https://wa.me/18132306957?text='+encodeURIComponent(cuerpo);
+  var html='<h3>'+F.resumenTitulo+'</h3><div class="divider"></div><dl>';
+  html+=fila(F.nombre,esc(d.nombre))+fila(F.tel,esc(d.tel))+fila(F.email,esc(d.email))+fila(F.fecha,esc(d.fecha));
+  html+=fila(F.tipoEv,esc(tipoEvLbl));
+  html+=fila(F.tipoComida,esc(d.tipoComida?F.valores[d.tipoComida]:F.noSel));
+  html+=fila(F.invitados,esc(String(d.inv)));
+  html+=fila(F.servicios,esc(d.servicios.length?d.servicios.map(function(s){return F.valores[s]}).join(', '):F.ninguno));
+  html+=fila(F.notas,esc(d.notas||'—'));
+  html+='</dl><p class="r-aviso">'+F.aviso+'</p>';
+  html+='<p class="r-aviso" style="margin-top:2px;font-size:.82rem">'+F.eligeVia+'</p>';
+  html+='<div class="r-acciones">';
+  html+='<a class="btn sans" href="'+wa+'" target="_blank">'+F.enviarWa+'</a>';
+  html+='<a class="btn borde sans" href="'+mailto+'">'+F.enviarMail+'</a>';
+  html+='<a class="btn borde sans" href="https://www.instagram.com/bruniluxuryevents/" target="_blank">'+F.enviarIg+'</a>';
+  html+='</div>';
+  box.innerHTML=html; box.style.display='block';
+}
+document.getElementById('formCotiza').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var d=buildData(), F=d.F, faltan=[];
+  if(!d.nombre)faltan.push(F.nombre);
+  if(!d.tel)faltan.push(F.tel);
+  if(!d.email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email))faltan.push(F.email);
+  if(!d.fecha)faltan.push(F.fecha);
+  var errBox=document.getElementById('fError');
+  if(faltan.length){
+    errBox.textContent=F.errIntro+faltan.join(', ')+'.';
+    errBox.style.display='block';
+    errBox.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  errBox.style.display='none';
+  lastData=d;
+  renderResumen(d);
+  document.getElementById('resumen').scrollIntoView({behavior:'smooth',block:'start'});
+});
+var _setLang=setLang;
+setLang=function(l){ _setLang(l); if(lastData){ lastData.F=FSTR[l]; renderResumen(lastData); } };
 </script>
 </body>
 </html>
