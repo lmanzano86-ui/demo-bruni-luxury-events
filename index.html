@@ -3,252 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis páginas — Lester Manzano</title>
-<link rel="apple-touch-icon" href="icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Mis páginas">
-<meta name="theme-color" content="#141414">
+<title>Bruni Luxury Events — Catering y Decoración de Eventos en Tampa</title>
 <style>
+:root{--champ:#faf1da;--oro:#b8860b;--oro-claro:#d4af37;--oro-osc:#8a6d1f;--bronze:#4a3410;--bronze-suave:#6f5626;--crema:#fffdf6}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#141414;color:#f5f5f5;line-height:1.55;min-height:100vh}
-.demo-bar{background:#000;color:#f5c542;text-align:center;font-size:12px;padding:8px 12px;letter-spacing:1px;font-weight:bold}
-header{text-align:center;padding:40px 20px 10px}
-header h1{font-size:30px;letter-spacing:1px}
-header h1 span{color:#f5c542}
-header p{color:#b9a86a;margin-top:8px;font-size:15px}
-.topnav{position:sticky;top:0;z-index:50;background:#0d0d0d;border-bottom:1px solid #3a3a3a;display:flex;justify-content:center;gap:8px;padding:10px 12px;flex-wrap:wrap}
-.topnav a{color:#f5f5f5;text-decoration:none;font-size:14px;font-weight:bold;padding:8px 16px;border-radius:20px;border:1px solid #3a3a3a}
-.topnav a:hover{border-color:#f5c542}
-.seccion{scroll-margin-top:70px}
-html{scroll-behavior:smooth}
-main{max-width:640px;margin:0 auto;padding:24px 20px 40px}
-.seccion{margin-bottom:36px}
-.sec-head{text-align:center;margin-bottom:16px}
-.sec-head h2{font-size:22px;letter-spacing:.5px}
-.sec-head p{color:#8a7a4a;font-size:13px;margin-top:2px}
-.seccion .card, .seccion .empty{margin-bottom:14px}
-.empty{background:#1a1a1a;border:1px dashed #4a4a4a;border-radius:12px;padding:18px;text-align:center;color:#8a8a8a;font-size:14px}
-.card{background:#1f1f1f;border:1px solid #3a3a3a;border-left:4px solid #f5c542;border-radius:12px;padding:20px;text-decoration:none;color:inherit;display:block}
-.card:hover{border-color:#f5c542}
-.card .tag{font-size:11px;font-weight:bold;letter-spacing:1px;color:#f5c542;text-transform:uppercase}
-.card h2{font-size:19px;margin:6px 0 4px}
-.card p{font-size:14px;color:#c9c9c9}
-.card .url{font-size:12px;color:#f5c542;margin-top:10px;word-break:break-all}
-footer{text-align:center;padding:24px;font-size:13px;color:#8a7a4a}
-footer b{color:#f5c542}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--bronze);max-width:640px;margin:0 auto;line-height:1.6;
+background:
+radial-gradient(circle at 8% 4%, rgba(255,255,255,.75) 0 34px, rgba(255,255,255,0) 35px),
+radial-gradient(circle at 92% 9%, rgba(212,175,55,.35) 0 54px, rgba(212,175,55,0) 55px),
+radial-gradient(circle at 14% 30%, rgba(212,175,55,.20) 0 26px, rgba(212,175,55,0) 27px),
+radial-gradient(circle at 86% 52%, rgba(255,255,255,.55) 0 30px, rgba(255,255,255,0) 31px),
+radial-gradient(circle at 9% 76%, rgba(212,175,55,.24) 0 44px, rgba(212,175,55,0) 45px),
+radial-gradient(circle at 91% 90%, rgba(255,255,255,.6) 0 36px, rgba(255,255,255,0) 37px),
+linear-gradient(165deg,#faf1da 0%,#f4e4b8 45%,#ecd49c 100%);
+background-attachment:fixed}
+.sans{font-family:'Segoe UI',Arial,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid rgba(184,134,11,.55);position:sticky;top:0;background:rgba(250,241,218,.96);z-index:10}
+.logo{display:flex;align-items:center;gap:10px}
+.wm-nombre{font-family:Georgia,'Times New Roman',serif;font-weight:bold;font-size:1.5rem;letter-spacing:7px;color:#9c7a1c;line-height:1}
+.wm-sub{display:flex;align-items:center;gap:6px;font-size:.52rem;letter-spacing:2.4px;color:#8a6d1f;margin-top:5px;white-space:nowrap}
+.wm-sub .rule{width:22px;height:1px;background:#a67c1a}
+.bmono{height:58px;width:94px;display:block;flex:none}
+.lang{display:flex;gap:6px}
+.lang button{background:transparent;border:1px solid var(--oro);color:var(--oro-osc);padding:6px 0;width:56px;text-align:center;border-radius:20px;font-size:.8rem;cursor:pointer;letter-spacing:1px}
+.lang button.activo{background:var(--oro);color:#fff8e6}
+.guirnalda{text-align:center;font-size:1.15rem;letter-spacing:14px;color:rgba(184,134,11,.5);padding:10px 0 0}
+.hero{padding:14px 18px 0}
+.marco{border:3px double var(--oro);border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(138,109,31,.28)}
+.marco img{width:100%;display:block;max-height:420px;object-fit:cover}
+.hero-txt{text-align:center;padding:22px 22px 8px}
+.hero-txt h1{font-size:1.85rem;color:var(--bronze);font-weight:normal;line-height:1.3}
+.hero-txt h1 em{color:var(--oro-osc);font-style:italic}
+.hero-txt .sub2{color:var(--bronze-suave);font-size:.95rem;margin:8px 0 4px}
+.tagline{font-style:italic;color:var(--oro-osc);font-size:1.08rem;letter-spacing:1px;margin:8px 0 16px}
+.adornos{color:rgba(184,134,11,.55);letter-spacing:10px;font-size:.95rem;margin:2px 0 12px}
+.btn{display:inline-block;background:linear-gradient(135deg,#d4af37,#a67c1a);color:#2e2006;text-decoration:none;padding:13px 28px;border-radius:30px;font-weight:bold;letter-spacing:1px;font-size:.95rem;box-shadow:0 4px 12px rgba(138,109,31,.3)}
+.btn.borde{background:rgba(255,253,246,.6);border:1px solid var(--oro);color:var(--oro-osc);box-shadow:none}
+section{padding:36px 22px}
+h2{font-size:1.5rem;color:var(--bronze);font-weight:normal;text-align:center;margin-bottom:6px;letter-spacing:2px}
+.sub{text-align:center;color:var(--bronze-suave);font-size:.9rem;margin-bottom:24px;font-style:italic}
+.serv{background:rgba(255,253,246,.78);border:1px solid rgba(184,134,11,.6);border-radius:12px;padding:22px;margin-bottom:16px;box-shadow:0 4px 14px rgba(138,109,31,.12)}
+.serv h3{color:var(--oro-osc);font-size:1.15rem;margin-bottom:8px;font-weight:normal}
+.serv p{font-size:.92rem;color:var(--bronze)}
+.serv .precio{color:var(--oro-osc);font-size:.85rem;margin-top:10px;letter-spacing:1px;font-weight:bold}
+.gal{overflow:hidden;text-align:center}
+.gal img{border-radius:10px;border:2px solid rgba(184,134,11,.65);box-shadow:0 4px 12px rgba(138,109,31,.18);margin-bottom:10px}
+.gal img.ancha{display:block;width:100%}
+.gal img.mitad{width:48.5%}
+.gal img.izq{float:left}
+.gal img.der{float:right}
+.muestra{font-size:.72rem;color:var(--bronze-suave);text-align:center;margin-top:10px;font-style:italic}
+.nos{background:rgba(255,253,246,.55);border-top:1px solid rgba(184,134,11,.5);border-bottom:1px solid rgba(184,134,11,.5)}
+.nos p{color:var(--bronze);font-size:.95rem;margin-bottom:12px}
+.nos strong{color:var(--oro-osc)}
+.contacto{text-align:center}
+.contacto .btn{margin:6px 4px}
+.nota{font-size:.8rem;color:var(--bronze-suave);margin-top:16px;font-style:italic}
+footer{text-align:center;padding:26px 18px;border-top:1px solid rgba(184,134,11,.5);color:var(--bronze-suave);font-size:.8rem}
+footer .dor{color:var(--oro-osc);letter-spacing:3px;font-weight:bold}
+footer a{color:var(--oro-osc);text-decoration:none}
+.divider{width:60px;height:2px;background:var(--oro);margin:14px auto;opacity:.8}
 </style>
 </head>
 <body>
-<div class="demo-bar">&#9733; PANEL PRIVADO &mdash; SOLO PARA TI &#9733;</div>
 <header>
-<h1>MIS <span>P&Aacute;GINAS</span></h1>
-<p>Todos tus sitios publicados en un solo lugar</p>
+  <div class="logo">
+    <div class="wm"><div class="wm-nombre">BRUNI</div><div class="wm-sub"><span class="rule"></span>LUXURY EVENTS<span class="rule"></span></div></div>
+    <img class="bmono" src="imgs/logo-monograma.png" alt="Monograma LB de Bruni Luxury Events">
+  </div>
+  <div class="lang"><button id="bEs" class="activo" onclick="setLang('es')">ES</button><button id="bEn" onclick="setLang('en')">EN</button></div>
 </header>
-<nav class="topnav">
-<a href="#sec-lester">🇺🇸 Mis páginas</a><a href="#sec-espana">🇪🇸 España</a><a href="#sec-brasil">🇧🇷 Brasil</a><a href="#sec-paises_bajos">🇳🇱 Países Bajos</a>
-</nav>
-<main>
-<div class="seccion" id="sec-lester">
+<div class="guirnalda" aria-hidden="true">✿ ❀ ✿</div>
 
-<a class="card" href="https://lmanzano86-ui.github.io/formulario-rhp/formulario-registro-rhp.html">
-<div class="tag">Herramienta de ventas</div>
-<h2>Formulario de registro RHP</h2>
-<p>Registro de prospectos en mercados y eventos, con rifa y exportación a CSV.</p>
-<div class="url">lmanzano86-ui.github.io/formulario-rhp/formulario-registro-rhp.html</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/carriers-equipo/">
-<div class="tag">Herramienta de equipo</div>
-<h2>Carriers del equipo</h2>
-<p>Directorio de carriers y enlaces de contratación para tu equipo de agentes.</p>
-<div class="url">lmanzano86-ui.github.io/carriers-equipo/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-taqueria/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo — Taquería El Faro</h2>
-<p>Ejemplo de página web para vender el paquete a restaurantes.</p>
-<div class="url">lmanzano86-ui.github.io/demo-taqueria/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-hacienda/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo — Restaurante La Hacienda</h2>
-<p>Ejemplo de página web con datos reales del restaurante colombiano.</p>
-<div class="url">lmanzano86-ui.github.io/demo-hacienda/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-caribbeantwist/">
-<div class="tag">Demo web</div>
-<h2>Demo Caribbean Twist</h2>
-<p>Restaurante cubano-dominicano en Tampa: demo moderna con fotos reales, menú, catering y QR.</p>
-<div class="url">lmanzano86-ui.github.io/demo-caribbeantwist/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-borinquen/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo El Famoso Borinquen</h2>
-<p>Tienda latina en Tampa: comida caliente, carnicería y abarrotes.</p>
-<div class="url">lmanzano86-ui.github.io/demo-borinquen/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/bravo-supermarkets/">
-<div class="tag">Demo para cliente</div>
-<h2>Bravo Supermarkets</h2>
-<p>Supermercado latino en Tampa: especiales semanales y circular.</p>
-<div class="url">lmanzano86-ui.github.io/bravo-supermarkets/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-inkbass/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo Inkbass Tattoo</h2>
-<p>Estudio de tatuajes en Tampa: estilos, artista y reservas.</p>
-<div class="url">lmanzano86-ui.github.io/demo-inkbass/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/paginas-web/">
-<div class="tag">Mi negocio</div>
-<h2>Páginas web para negocios</h2>
-<p>Presentación de mi servicio: planes, hosting privado y ejemplos.</p>
-<div class="url">lmanzano86-ui.github.io/paginas-web/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-caribbeanclub/">
-<div class="tag">DEMO</div>
-<h2>Caribbean Club Market</h2>
-<p>Demo bilingüe ES/EN con especiales y ofertas</p>
-<div class="url">lmanzano86-ui.github.io/demo-caribbeanclub/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-ultrajewelry/">
-<div class="tag">DEMO</div>
-<h2>Ultra Jewelry</h2>
-<p>Demo elegante marfil y dorado, bilingüe ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-ultrajewelry/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-latinfresh/">
-<div class="tag">Mercado</div>
-<h2>Latin Fresh Market</h2>
-<p>Mercado latino · Tampa y Riverview</p>
-<div class="url">lmanzano86-ui.github.io/demo-latinfresh/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-lalasthreading/">
-<div class="tag">Salón de belleza</div>
-<h2>Lala&#x27;s Threading &amp; Beauty Salon</h2>
-<p>Demo elegante: threading, cejas, maquillaje y más — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-lalasthreading/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-willibarbershop/">
-<div class="tag">Barbería</div>
-<h2>Willi Barbershop</h2>
-<p>Demo moderna: reserva en Booksy, precios reales — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-willibarbershop/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-maikelsbakery/">
-<div class="tag">PANADERÍA</div>
-<h2>Maikel&#x27;s Florida Bakery</h2>
-<p>Demo moderna: pastelitos, sándwich cubano, cakes de encargo — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-maikelsbakery/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-kvconstruction/">
-<div class="tag">CONTRATISTA</div>
-<h2>KV Home Construction</h2>
-<p>Demo moderna: construcción, remodelaciones y piscinas — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-kvconstruction/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-senortacos/">
-<div class="tag">restaurante</div>
-<h2>El Señor de los Tacos</h2>
-<p>Demo moderna con pedidos por Square, fotos reales, menú y redes</p>
-<div class="url">lmanzano86-ui.github.io/demo-senortacos/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-mvbbarbershop/">
-<div class="tag">barberia</div>
-<h2>MVB Barbershop</h2>
-<p>Demo deportiva con equipo de 3 barberos, reservas en Booksy y fotos reales</p>
-<div class="url">lmanzano86-ui.github.io/demo-mvbbarbershop/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-zuripetshop/">
-<div class="tag">Tienda de mascotas</div>
-<h2>Zuri Palomas Pet Shop</h2>
-<p>Demo colorida para tienda de mascotas en Tampa</p>
-<div class="url">lmanzano86-ui.github.io/demo-zuripetshop/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-petes-place-north/">
-<div class="tag">eeuu</div>
-<h2>Pete&#x27;s Place North &amp; Liquor Store</h2>
-<p>Bar y licorera en Tampa — demo bilingüe ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-petes-place-north/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-fenix-tattoo/">
-<div class="tag">eeuu</div>
-<h2>Fenix Tattoo Gallery</h2>
-<p>Estudio de tatuajes en Tampa — propuesta de rediseño bilingüe ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-fenix-tattoo/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-lemarques/">
-<div class="tag">eeuu</div>
-<h2>Le Marqués Hair &amp; Beauty</h2>
-<p>Salón de belleza premium en Tampa — demo de lujo bilingüe ES/EN con sistema de reservas</p>
-<div class="url">lmanzano86-ui.github.io/demo-lemarques/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-lemarques-2/">
-<div class="tag">eeuu</div>
-<h2>Le Marqués Hair &amp; Beauty — versión oscura</h2>
-<p>Segunda propuesta: negro y dorado con el logo original + sistema de reservas</p>
-<div class="url">lmanzano86-ui.github.io/demo-lemarques-2/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-angelas-salon/">
-<div class="tag">eeuu</div>
-<h2>Angela&#x27;s Salon Dominicana</h2>
-<p>Salón de belleza dominicano en Tampa: demo bilingüe ES/EN con su logo real, sistema de agendar citas y WhatsApp</p>
-<div class="url">lmanzano86-ui.github.io/demo-angelas-salon/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-carrollwood-pet-grooming/">
-<div class="tag">eeuu</div>
-<h2>Carrollwood Pet Grooming</h2>
-<p>Peluquería canina y felina en Tampa: demo bilingüe ES/EN con sistema de reservas, QR de ubicación y reseñas</p>
-<div class="url">lmanzano86-ui.github.io/demo-carrollwood-pet-grooming/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-bruni-luxury-events/">
-<div class="tag">eeuu</div>
-<h2>Bruni Luxury Events</h2>
-<p>Catering y decoración de eventos de lujo en Tampa — demo ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-bruni-luxury-events/</div>
-</a>
+<div class="hero">
+  <div class="marco"><img src="imgs/hero.webp" alt="Mesa de evento de lujo decorada por Bruni Luxury Events"></div>
+  <div class="hero-txt">
+    <h1 data-es="Eventos inolvidables con un toque de <em>lujo</em>" data-en="Unforgettable events with a touch of <em>luxury</em>">Eventos inolvidables con un toque de <em>lujo</em></h1>
+    <p class="sub2" data-es="Catering y decoración para tus momentos más especiales en Tampa, FL" data-en="Catering and décor for your most special moments in Tampa, FL">Catering y decoración para tus momentos más especiales en Tampa, FL</p>
+    <p class="tagline" data-es="Your Dream Event, Our Passion" data-en="Your Dream Event, Our Passion">Your Dream Event, Our Passion</p>
+    <div class="adornos" aria-hidden="true">✦ ✿ ✦</div>
+    <a class="btn sans" href="https://www.instagram.com/bruniluxuryevents/" target="_blank" data-es="Cotiza por Instagram" data-en="Get a quote on Instagram">Cotiza por Instagram</a>
+  </div>
 </div>
-<div class="seccion" id="sec-espana">
-<div class="sec-head"><h2>🇪🇸 Agente España</h2><p>Páginas del agente en España</p></div>
-<div class="empty">Sin páginas todavía &mdash; se agregan automáticamente al publicar.</div>
-</div>
-<div class="seccion" id="sec-brasil">
-<div class="sec-head"><h2>🇧🇷 Agente Brasil</h2><p>Páginas del agente en Brasil</p></div>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-panedefacci/">
-<div class="tag">Padaria</div>
-<h2>Pane Defacci Padaria e Confeitaria</h2>
-<p>Demo trilingüe (PT/ES/EN) para padaria em Foz do Iguaçu, Brasil.</p>
-<div class="url">lmanzano86-ui.github.io/demo-panedefacci/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-casadomel/">
-<div class="tag">Produtos naturais</div>
-<h2>Casa do Mel Foz do Iguaçu</h2>
-<p>Demo trilingüe (PT/ES/EN) para loja de produtos naturais em Foz do Iguaçu, Brasil.</p>
-<div class="url">lmanzano86-ui.github.io/demo-casadomel/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-academia-plena-forma/">
-<div class="tag">brasil</div>
-<h2>Academia Plena Forma</h2>
-<p>Gimnasio en Foz do Iguaçu — demo trilingüe PT/ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-academia-plena-forma/</div>
-</a>
-</div>
-<div class="seccion" id="sec-paises_bajos">
-<div class="sec-head"><h2>🇳🇱 Agente Países Bajos</h2><p>Páginas del agente en Países Bajos</p></div>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-van-der-linde/">
-<div class="tag">Demo Países Bajos</div>
-<h2>Demo — Banketbakkerij Van der Linde</h2>
-<p>Pastelería/heladería icónica de Ámsterdam (desde 1937). Demo en neerlandés.</p>
-<div class="url">lmanzano86-ui.github.io/demo-van-der-linde/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-phone-more/">
-<div class="tag">Países Bajos</div>
-<h2>Phone &amp; more</h2>
-<p>Demo trilingüe (NL/ES/EN) — tienda de móviles, Damrak/Dam, Ámsterdam</p>
-<div class="url">lmanzano86-ui.github.io/demo-phone-more/</div>
-</a>
-</div>
-</main>
-<footer><b>LESTER MANZANO</b> &middot; 813 235 3313</footer>
+
+<section>
+  <h2 data-es="Nuestros servicios" data-en="Our services">Nuestros servicios</h2>
+  <div class="divider"></div>
+  <p class="sub" data-es="Cada evento es especial e importante para nosotros" data-en="Every event is special and important to us">Cada evento es especial e importante para nosotros</p>
+  <div class="serv">
+    <h3 data-es="Catering para eventos" data-en="Event catering">Catering para eventos</h3>
+    <p data-es="Buffets elegantes para bodas, quinceañeras, eventos corporativos y celebraciones privadas: arroces, carnes, pollo, ensaladas frescas y finger foods preparados con esmero." data-en="Elegant buffets for weddings, quinceañeras, corporate events and private celebrations: rice dishes, meats, chicken, fresh salads and carefully prepared finger foods.">Buffets elegantes para bodas, quinceañeras, eventos corporativos y celebraciones privadas: arroces, carnes, pollo, ensaladas frescas y finger foods preparados con esmero.</p>
+    <p class="precio sans" data-es="✦ Cotización personalizada" data-en="✦ Custom quote">✦ Cotización personalizada</p>
+  </div>
+  <div class="serv">
+    <h3 data-es="Decoración y montaje" data-en="Décor & table styling">Decoración y montaje</h3>
+    <p data-es="Mesas vestidas con mantelería fina, vajilla con detalles dorados, candelabros, arreglos florales y guirnaldas de eucalipto. Creamos la atmósfera que tu evento merece." data-en="Tables dressed with fine linens, gold-detailed dinnerware, candelabras, floral arrangements and eucalyptus garlands. We create the atmosphere your event deserves.">Mesas vestidas con mantelería fina, vajilla con detalles dorados, candelabros, arreglos florales y guirnaldas de eucalipto. Creamos la atmósfera que tu evento merece.</p>
+    <p class="precio sans" data-es="✦ Cotización personalizada" data-en="✦ Custom quote">✦ Cotización personalizada</p>
+  </div>
+  <div class="serv">
+    <h3 data-es="Eventos privados y corporativos" data-en="Private & corporate events">Eventos privados y corporativos</h3>
+    <p data-es="Coordinamos catering y decoración para que solo te ocupes de disfrutar: cumpleaños, aniversarios, lanzamientos y eventos de empresa en el área de Tampa Bay." data-en="We coordinate catering and décor so you only have to enjoy: birthdays, anniversaries, launches and company events across the Tampa Bay area.">Coordinamos catering y decoración para que solo te ocupes de disfrutar: cumpleaños, aniversarios, lanzamientos y eventos de empresa en el área de Tampa Bay.</p>
+    <p class="precio sans" data-es="✦ Cotización personalizada" data-en="✦ Custom quote">✦ Cotización personalizada</p>
+  </div>
+</section>
+
+<section class="nos">
+  <h2 data-es="Galería" data-en="Gallery">Galería</h2>
+  <div class="divider"></div>
+  <p class="sub" data-es="Una muestra de nuestro estilo" data-en="A sample of our style">Una muestra de nuestro estilo</p>
+  <div class="gal">
+    <img class="ancha" src="imgs/buffet.webp" alt="Buffet de catering elegante">
+    <img class="mitad izq" src="imgs/decor.webp" alt="Decoración de mesa de lujo">
+    <img class="mitad der" src="imgs/fingerfood.webp" alt="Finger foods gourmet">
+  </div>
+  <p class="muestra sans" data-es="Fotos de muestra — el portafolio real se publica con fotos del negocio" data-en="Sample photos — the real portfolio will feature the business's own photos">Fotos de muestra — el portafolio real se publica con fotos del negocio</p>
+</section>
+
+<section>
+  <h2 data-es="Sobre nosotros" data-en="About us">Sobre nosotros</h2>
+  <div class="divider"></div>
+  <p class="sub" data-es="Your Dream Event, Our Passion" data-en="Your Dream Event, Our Passion">Your Dream Event, Our Passion</p>
+  <p style="color:var(--bronze);font-size:.95rem;margin-bottom:12px" data-es="<strong>Bruni Luxury Events</strong> es una empresa de catering y decoración de eventos en Tampa, Florida. Nos especializamos en crear experiencias elegantes donde cada detalle cuenta: desde el buffet hasta la última vela encendida." data-en="<strong>Bruni Luxury Events</strong> is an event catering and décor company in Tampa, Florida. We specialize in creating elegant experiences where every detail counts: from the buffet to the last lit candle."><strong>Bruni Luxury Events</strong> es una empresa de catering y decoración de eventos en Tampa, Florida. Nos especializamos en crear experiencias elegantes donde cada detalle cuenta: desde el buffet hasta la última vela encendida.</p>
+  <p style="color:var(--bronze);font-size:.95rem" data-es="Trabajamos eventos íntimos y grandes celebraciones con el mismo compromiso: que tu día sea verdaderamente inolvidable." data-en="We handle intimate gatherings and grand celebrations with the same commitment: making your day truly unforgettable.">Trabajamos eventos íntimos y grandes celebraciones con el mismo compromiso: que tu día sea verdaderamente inolvidable.</p>
+</section>
+
+<section class="contacto nos">
+  <h2 data-es="Cotiza tu evento" data-en="Quote your event">Cotiza tu evento</h2>
+  <div class="divider"></div>
+  <p class="sub" data-es="Cuéntanos tu fecha y el tipo de evento — te respondemos con una cotización personalizada" data-en="Tell us your date and event type — we'll reply with a personalized quote">Cuéntanos tu fecha y el tipo de evento — te respondemos con una cotización personalizada</p>
+  <a class="btn sans" href="https://www.instagram.com/bruniluxuryevents/" target="_blank" data-es="Escríbenos en Instagram" data-en="Message us on Instagram">Escríbenos en Instagram</a>
+  <a class="btn borde sans" href="tel:+18132306957" data-es="📞 (813) 230-6957" data-en="📞 (813) 230-6957">📞 (813) 230-6957</a>
+  <a class="btn borde sans" href="mailto:Bruniluxevents@gmail.com" data-es="✉️ Bruniluxevents@gmail.com" data-en="✉️ Bruniluxevents@gmail.com">✉️ Bruniluxevents@gmail.com</a>
+  <p class="nota sans" data-es="Síguenos: @bruniluxuryevents" data-en="Follow us: @bruniluxuryevents">Síguenos: @bruniluxuryevents</p>
+</section>
+
+<footer>
+  <div class="dor">BRUNI LUXURY EVENTS</div>
+  <p class="sans" style="margin-top:8px">Tampa, Florida</p>
+  <p class="sans" style="margin-top:8px"><a href="tel:+18132306957">(813) 230-6957</a> · <a href="mailto:Bruniluxevents@gmail.com">Bruniluxevents@gmail.com</a></p>
+  <p class="sans" style="font-size:.72rem;margin-top:6px" data-es="Página de demostración — New Age Professional Services" data-en="Demo page — New Age Professional Services">Página de demostración — New Age Professional Services</p>
+  <div class="guirnalda" aria-hidden="true" style="padding-bottom:0">✿ ❀ ✿</div>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-es]').forEach(function(el){
+    el.innerHTML = (l==='es') ? el.getAttribute('data-es') : el.getAttribute('data-en');
+  });
+  document.getElementById('bEs').classList.toggle('activo',l==='es');
+  document.getElementById('bEn').classList.toggle('activo',l==='en');
+  try{localStorage.setItem('bruni-lang',l)}catch(e){}
+}
+try{var s=localStorage.getItem('bruni-lang');if(s)setLang(s)}catch(e){}
+</script>
 </body>
 </html>
